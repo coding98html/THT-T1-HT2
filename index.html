@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HB's THT</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HB's THT</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
@@ -32,9 +33,9 @@
         <p><br><br>The image that was including a tsunami was curated by OpenAI's ChatGPT (c) [2024] <br><br>
           The image that was for question was curated by OpenAI's DALL-E 3 through Microsoft's Bing (c) [2024] <br><br>
           The code including this pop-up and all animations was curated by OpenAI's ChatGPT (c) [2024]
-          All facts were reseached by me (c) [2024]
+          All facts were researched by me (c) [2024]
         </p>
-        <!-- Close button now positioned in the bottom-right -->
+        <!-- Close button in the bottom-right corner -->
         <button class="close-btn" onclick="closeModal()">Close</button>
     </div>
 
@@ -64,12 +65,13 @@
             window.location.href = "https://www.mtu.edu/geo/community/seismology/learn/earthquake-measure/magnitude/";
         }
 
-        // Modal functions
+        // Open modal (background and modal box)
         function openModal() {
             document.querySelector('.modal-background').style.display = 'block';
             document.querySelector('.modal').style.display = 'block';
         }
 
+        // Close modal (background and modal box)
         function closeModal() {
             document.querySelector('.modal-background').style.display = 'none';
             document.querySelector('.modal').style.display = 'none';

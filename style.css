@@ -9,27 +9,22 @@ body {
   font-family: Arial, sans-serif;
   color: #fff; /* Default text color for readability */
 }
-  .revealBackground {
-    background-image: url('images/ChatGPT-Image1.webp');
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-   /* Smooth transition for background change */
 
-/* Background after reveal */
 .revealBackground {
-  background-image: url('images/ChatGPT-Image1.webp'); /* Tsunami image */
+  background-image: url('images/ChatGPT-Image1.webp');
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Content fade-in animation */
 .hidden {
   opacity: 0;
-  pointer-events: none; /* Prevent interaction when hidden */
+  pointer-events: none;
   visibility: hidden;
 }
 
@@ -43,7 +38,7 @@ body {
 .fadeIn {
   opacity: 1 !important;
   transform: translateY(0);
-  pointer-events: auto;  /* Allow interaction when fully visible */
+  pointer-events: auto;
   visibility: visible;
 }
 
@@ -58,6 +53,7 @@ body {
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
+  cursor: pointer; /* Make the caption clickable */
 }
 
 .didYouKnow {
@@ -79,8 +75,84 @@ body {
 
 /* Temporary styling to make <h2> element visible */
 h2.fadeContent {
-  color: white !important; /* Temporary color to ensure visibility */
-  opacity: 1 !important; /* Force visibility */
-  font-size: 24px; /* Increase size for visibility */
+  color: white !important;
+  opacity: 1 !important;
+  font-size: 24px;
   text-align: center;
+}
+
+/* Fade-in effect for the fun fact */
+#funFact {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s 1s;
+}
+
+#funFact.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 0s 0s;
+}
+
+/* Modal Background (Overlay) */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  animation: fadeInBackground 0.3s forwards;
+}
+
+/* Modal Box */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  width: calc(100% - 200px); /* 100px space on both left and right */
+  height: calc(100% - 200px); /* 100px space on top and bottom */
+  animation: fadeInModal 0.5s forwards;
+  color: black;
+}
+
+/* Background Fade In Animation */
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Fade In Animation */
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Close Button */
+.close-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  bottom: 10px; /* Position the button in the bottom-right */
+  right: 10px;  /* Add some padding from the right edge */
+}
+
+.close-btn:hover {
+  background-color: #0056b3;
 }

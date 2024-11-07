@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
-    <!-- Copyright caption -->
-    <div class="caption">Image and part of code generated with OpenAI's ChatGPT © 2024</div>
+    <!-- Copyright caption (click to open modal) -->
+    <div class="caption" onclick="openModal()">For the copyright, click on this sentence.</div>
+    
     <h2 class="fadeContent">My main natural disaster this website is focused on is:</h2>
     <b id="titleOfProject" onclick="revealContent()">CLICK ME</b>
     <div id="content" class="fadeContent hidden">
@@ -23,34 +24,55 @@
                </p>
     </div>
 
+    <!-- Modal Background -->
+    <div class="modal-background" onclick="closeModal()"></div>
+
+    <!-- Modal Box -->
+    <div class="modal">
+        <p><br><br>The image that was including a tsunami was curated by OpenAI's ChatGPT (c) [2024] <br><br>
+          The image that was for question was curated by OpenAI's DALL-E 3 through Microsoft's Bing (c) [2024] <br><br>
+          The code including this pop-up and all animations was curated by OpenAI's ChatGPT (c) [2024]
+          All facts were reseached by me (c) [2024]
+        </p>
+        <!-- Close button now positioned in the bottom-right -->
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+
     <script>
+        // Reveal content on click
         function revealContent() {
-            // Change the title text and add fade-in class
             const title = document.getElementById('titleOfProject');
             title.textContent = 'THE GREAT INDIAN OCEAN TSUNAMI OF 2004';
-            title.classList.add('fadeIn');  // This will trigger the fade-in effect
+            title.classList.add('fadeIn');
 
-            // Change the background image
             const body = document.getElementById('body');
-            body.classList.add('revealBackground');  // Switch to the new background image
+            body.classList.add('revealBackground');
 
-            // Show and fade in the content with a slight delay for smooth transition
             const content = document.getElementById('content');
-            content.classList.remove('hidden');  // Make element visible
-
-            // Adding fadeIn after a short delay for smoother effect
+            content.classList.remove('hidden');
             setTimeout(() => content.classList.add('fadeIn'), 50);
         }
 
-        // Toggle the fun fact display
+        // Toggle fun fact visibility
         function toggleFact() {
             const funFact = document.getElementById('funFact');
-            funFact.classList.toggle('hidden');
+            funFact.classList.toggle('visible');
         }
 
-        // Open the external link
+        // Open external link
         function openLink() {
             window.location.href = "https://www.mtu.edu/geo/community/seismology/learn/earthquake-measure/magnitude/";
+        }
+
+        // Modal functions
+        function openModal() {
+            document.querySelector('.modal-background').style.display = 'block';
+            document.querySelector('.modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.querySelector('.modal-background').style.display = 'none';
+            document.querySelector('.modal').style.display = 'none';
         }
     </script>
 </body>

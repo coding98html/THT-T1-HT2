@@ -34,22 +34,6 @@
                <span id="funFact" class="hidden">This was also on <b>Boxing Day</b>, the main reason why it is commonly known as the '<i>Boxing Day</i> tsunami'</span>
                </p>
 
-               <!-- Font size control for heading (h1) -->
-<div class="font-size-control">
-    <b>Font Size (heading): </b>
-    <span id="currentSizeHeading">34px</span>
-    <button onclick="changeFontSize('heading', 'decrease')" class="font-btn">-</button>
-    <button onclick="changeFontSize('heading', 'increase')" class="font-btn">+</button>
-</div>
-
-<!-- Font size control for main text -->
-<div class="font-size-control">
-    <b>Font Size (main text): </b>
-    <span id="currentSizeMain">20px</span>
-    <button onclick="changeFontSize('main', 'decrease')" class="font-btn">-</button>
-    <button onclick="changeFontSize('main', 'increase')" class="font-btn">+</button>
-</div>
-
     </div>
 
     <!-- Modal Background -->
@@ -61,6 +45,22 @@
           The image that was for question was curated by OpenAI's DALL-E 3 through Microsoft's Bing (c) [2024] <br><br>
           The code including this pop-up, all animations and font size boxes was curated by OpenAI's ChatGPT (c) [2024]
           All facts were researched by me (c) [2024]
+
+                <!-- Font size control for heading (h1) -->
+            <div class="font-size-control">
+                    <b>Font Size (heading): </b>
+                    <span id="currentSizeHeading">28px</span>
+                    <button onclick="changeFontSize('heading', 'decrease')" class="font-btn">-</button>
+                    <button onclick="changeFontSize('heading', 'increase')" class="font-btn">+</button>
+            </div>
+
+        <!-- Font size control for main text -->
+            <div class="font-size-control">
+                    <b>Font Size (main text): </b>
+                    <span id="currentSizeMain">20px</span>
+                    <button onclick="changeFontSize('main', 'decrease')" class="font-btn">-</button>
+                    <button onclick="changeFontSize('main', 'increase')" class="font-btn">+</button>
+            </div>
         </p>
         <!-- Close button in the bottom-right corner -->
         <button class="close-btn" onclick="closeModal()">Close</button>
@@ -105,7 +105,7 @@
         }
 
         // Initial font sizes for headings and main text
-let headingFontSize = 34;
+let headingFontSize = 28;
 let mainFontSize = 20;
 
 function changeFontSize(type, action) {

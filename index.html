@@ -10,7 +10,7 @@
     <!-- Copyright caption (click to open modal) -->
     <div class="caption" onclick="openModal()">For the copyright, click on this sentence.</div>
     
-    <h2 class="fadeContent">My main natural disaster this website is focused on is: <b id="titleOfProject" onclick="revealContent()">CLICK ME</b></h2>
+    <h1 class="fadeContent">My main natural disaster this website is focused on is: <b id="titleOfProject" onclick="revealContent()">CLICK ME</b></h1>
     <div id="content" class="fadeContent hidden">
             <ul>
                 <li>There was an earthquake on the coast of the Indonesian island Sumatra of <b>9.1</b> magnitude.</li>
@@ -21,10 +21,10 @@
                 <li>The Sumatra-Andaman earthquake, which caused the tsunami, is estimated to have released energy equivalent to 23,000 Hiroshima-type atomic bombs. (According to ChatGPT: "The energy released by the earthquake that caused the 2004 tsunami was like having <b>2 billion cars</b> all driving at <b>100 km/h</b> at the same time. That's how powerful it was - enough energy to shake the entire ocean!"</li>
                 <li>And now, some things from <b>The Australian Disaster Resilience Knowledge Hub</b>
                     <ul>
-                        <li>Although, it started in the Indonesian island of Sumatra, according to The Australian Disaster Resilience Knowledge Hub (click <a href="https://knowledge.aidr.org.au/media/3767/tsunami-stats-facts.pdf" id="openLink" style="color: yellow;">this</a>), they say: "275,000 people were killed in fourteen countries across two continents, with the
-                            last two fatalities being swept out to sea in South Africa, more than twelve hours after
-                            the earthquake." This may differ though, as worldvision.org said: "Approximately 230,000 died in the 2004 Indian Ocean earthquake and tsunami. It is one of the deadliest disasters in modern history."</li>
-                            <li>"US $250 million worth of support was provided across the region by the United
+                        <li>Although, it started in the Indonesian island of Sumatra, according to The Australian Disaster Resilience Knowledge Hub (click <a href="https://knowledge.aidr.org.au/media/3767/tsunami-stats-facts.pdf" id="openLink" style="color: yellow;">this</a>), they say: "<b>275,000</b> people were killed in fourteen countries across two continents, with the
+                            last two fatalities being swept out to sea in South Africa, more than <b>twelve hours</b> after
+                            the earthquake." This may differ though, as worldvision.org said: "Approximately <b>230,000</b> died in the 2004 Indian Ocean earthquake and tsunami. It is one of the deadliest disasters in modern history."</li>
+                            <li>"<b>US $250 million</b> worth of support was provided across the region by the United
                                 States military."</li>
                                 <li>Another fun fact (not for the people affectted): "It is the <b>fourth largest earthquake</b> of recent times"</li>
                     </ul>
@@ -34,10 +34,10 @@
                <span id="funFact" class="hidden">This was also on <b>Boxing Day</b>, the main reason why it is commonly known as the '<i>Boxing Day</i> tsunami'</span>
                </p>
 
-               <!-- Font size control for heading (h2) -->
+               <!-- Font size control for heading (h1) -->
 <div class="font-size-control">
     <b>Font Size (heading): </b>
-    <span id="currentSizeHeading">32px</span>
+    <span id="currentSizeHeading">34px</span>
     <button onclick="changeFontSize('heading', 'decrease')" class="font-btn">-</button>
     <button onclick="changeFontSize('heading', 'increase')" class="font-btn">+</button>
 </div>
@@ -45,7 +45,7 @@
 <!-- Font size control for main text -->
 <div class="font-size-control">
     <b>Font Size (main text): </b>
-    <span id="currentSizeMain">18px</span>
+    <span id="currentSizeMain">20px</span>
     <button onclick="changeFontSize('main', 'decrease')" class="font-btn">-</button>
     <button onclick="changeFontSize('main', 'increase')" class="font-btn">+</button>
 </div>
@@ -105,11 +105,11 @@
         }
 
         // Initial font sizes for headings and main text
-let headingFontSize = 24;
+let headingFontSize = 34;
 let mainFontSize = 20;
 
 function changeFontSize(type, action) {
-    const headingElements = document.querySelectorAll('h2');
+    const headingElements = document.querySelectorAll('h1');
     const mainContent = document.body;
     const headingSizeDisplay = document.getElementById('currentSizeHeading');
     const mainSizeDisplay = document.getElementById('currentSizeMain');
@@ -119,8 +119,8 @@ function changeFontSize(type, action) {
         if (action === 'increase') headingFontSize += 2;
         else if (action === 'decrease' && headingFontSize > 12) headingFontSize -= 2;
 
-        // Apply new font size to all <h2> elements
-        headingElements.forEach(h2 => h2.style.fontSize = headingFontSize + 'px');
+        // Apply new font size to all <h1> elements
+        headingElements.forEach(h1 => h1.style.fontSize = headingFontSize + 'px');
         headingSizeDisplay.textContent = headingFontSize + 'px';
     } else if (type === 'main') {
         if (action === 'increase') mainFontSize += 2;
